@@ -1,0 +1,4 @@
+name: tp
+version: '${version}'
+main: dev.tp.Tp
+api-version: 1.19
