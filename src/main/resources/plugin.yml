@@ -1,4 +1,4 @@
 name: tp
 version: '${version}'
-main: dev.tp.Tp
+main: dev.tp.Main
 api-version: 1.19
