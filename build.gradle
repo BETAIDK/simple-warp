@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
 group = 'dev'
@@ -17,7 +18,15 @@ repositories {
     }
 }
 
+shadowJar {
+    destinationDirectory.set(file('output'))
+    archiveFileName.set("tp.jar")
+}
+
 dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
     compileOnly "org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT"
 }
 
