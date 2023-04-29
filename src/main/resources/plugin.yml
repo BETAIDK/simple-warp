@@ -1,6 +1,6 @@
 name: simple-warp
 version: '${version}'
-main: dev.tp.WarpPluginLoader
+main: idan.dev.warp.WarpPluginLoader
 api-version: 1.19
 commands:
   warp:
