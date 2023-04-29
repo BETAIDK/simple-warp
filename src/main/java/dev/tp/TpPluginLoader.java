@@ -31,6 +31,4 @@ public final class TpPluginLoader extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
     }
-
-
 }
