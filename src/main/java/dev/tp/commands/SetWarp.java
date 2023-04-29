@@ -1,6 +1,6 @@
 package dev.tp.commands;
 
-import dev.tp.TpPluginLoader;
+import dev.tp.WarpPluginLoader;
 import dev.tp.system.WarpManager;
 import dev.tp.utils.OfflineLocation;
 import org.bukkit.Bukkit;
@@ -11,9 +11,9 @@ import org.bukkit.entity.Player;
 
 public class SetWarp implements CommandExecutor {
 
-    private final TpPluginLoader plugin;
+    private final WarpPluginLoader plugin;
 
-    public SetWarp(TpPluginLoader plugin) {
+    public SetWarp(WarpPluginLoader plugin) {
         this.plugin = plugin;
     }
 
@@ -38,7 +38,7 @@ public class SetWarp implements CommandExecutor {
         String warpName = args[0];
 
         manager.addWarp(warpName, OfflineLocation.from(player.getLocation()));
-        player.sendMessage("Warp has been set by the name:" + warpName);
+        player.sendMessage("§aWarp has been set by the name:" + warpName);
         return true;
     }
 }

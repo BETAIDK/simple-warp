@@ -1,6 +1,6 @@
 package dev.tp.commands;
 
-import dev.tp.TpPluginLoader;
+import dev.tp.WarpPluginLoader;
 import dev.tp.system.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -14,9 +14,9 @@ import java.util.Set;
 
 public class UnWarp implements CommandExecutor, TabCompleter {
 
-    private final TpPluginLoader plugin;
+    private final WarpPluginLoader plugin;
 
-    public UnWarp(TpPluginLoader plugin) {
+    public UnWarp(WarpPluginLoader plugin) {
         this.plugin = plugin;
     }
 
@@ -42,7 +42,7 @@ public class UnWarp implements CommandExecutor, TabCompleter {
 
         if (manager.getWarp(warpName).isEmpty()) return false;
         manager.removeWarp(warpName);
-        player.sendMessage("warp " + warpName + " was successful removed!");
+        player.sendMessage("§awarp " + warpName + " was successful removed!");
         return true;
     }
 

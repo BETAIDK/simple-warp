@@ -1,6 +1,6 @@
 name: tp
 version: '${version}'
-main: dev.tp.TpPluginLoader
+main: dev.tp.WarpPluginLoader
 api-version: 1.19
 commands:
   warp:

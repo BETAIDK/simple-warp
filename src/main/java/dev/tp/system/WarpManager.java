@@ -1,6 +1,6 @@
 package dev.tp.system;
 
-import dev.tp.TpPluginLoader;
+import dev.tp.WarpPluginLoader;
 import dev.tp.utils.OfflineLocation;
 import lombok.NonNull;
 import org.bukkit.configuration.ConfigurationSection;
@@ -15,10 +15,10 @@ public class WarpManager {
 
     public static final Pattern WARP_REGEX = Pattern.compile("^[a-zA-Z0-9_]{1,20}$");
 
-    private final TpPluginLoader plugin;
+    private final WarpPluginLoader plugin;
     private final Map<String, OfflineLocation> warps;
 
-    public WarpManager(TpPluginLoader plugin) {
+    public WarpManager(WarpPluginLoader plugin) {
         this.plugin = plugin;
         warps = new HashMap<>();
 

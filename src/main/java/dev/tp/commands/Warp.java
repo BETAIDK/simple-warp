@@ -1,18 +1,22 @@
 package dev.tp.commands;
 
-import dev.tp.TpPluginLoader;
+import dev.tp.WarpPluginLoader;
 import dev.tp.system.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
-public class Warp implements CommandExecutor {
+import java.util.List;
+import java.util.Set;
 
-    private final TpPluginLoader plugin;
+public class Warp implements CommandExecutor, TabCompleter {
 
-    public Warp(TpPluginLoader plugin) {
+    private final WarpPluginLoader plugin;
+
+    public Warp(WarpPluginLoader plugin) {
         this.plugin = plugin;
     }
 
@@ -33,5 +37,16 @@ public class Warp implements CommandExecutor {
 
         player.teleport(manager.getWarp(warpName).get().toLocation());
         return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+        if (args.length == 1) {
+            WarpManager manager = plugin.getWarpManager();
+            Set<String> warpNames = manager.getWarpsName();
+
+            return warpNames.stream().toList();
+        }
+        return null;
     }
 }
