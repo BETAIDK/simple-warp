@@ -1,4 +1,4 @@
-package dev.tp.utils;
+package idan.dev.warp.utils;
 
 import lombok.NonNull;
 import org.bukkit.Bukkit;

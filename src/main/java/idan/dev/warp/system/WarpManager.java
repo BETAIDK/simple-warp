@@ -1,7 +1,7 @@
-package dev.tp.system;
+package idan.dev.warp.system;
 
-import dev.tp.WarpPluginLoader;
-import dev.tp.utils.OfflineLocation;
+import idan.dev.warp.WarpPluginLoader;
+import idan.dev.warp.utils.OfflineLocation;
 import lombok.NonNull;
 import org.bukkit.configuration.ConfigurationSection;
 

@@ -1,7 +1,9 @@
-package dev.tp;
+package idan.dev.warp;
 
-import dev.tp.commands.*;
-import dev.tp.system.WarpManager;
+import idan.dev.warp.commands.SetWarp;
+import idan.dev.warp.commands.UnWarp;
+import idan.dev.warp.commands.Warp;
+import idan.dev.warp.system.WarpManager;
 import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 

@@ -1,7 +1,7 @@
-package dev.tp.commands;
+package idan.dev.warp.commands;
 
-import dev.tp.WarpPluginLoader;
-import dev.tp.system.WarpManager;
+import idan.dev.warp.WarpPluginLoader;
+import idan.dev.warp.system.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
