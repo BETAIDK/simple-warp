@@ -2,3 +2,10 @@ name: tp
 version: '${version}'
 main: dev.tp.TpPluginLoader
 api-version: 1.19
+commands:
+  warp:
+    description: Teleport to a warp
+  setWarp:
+    description: Set a warp
+  unWarp:
+    description: Remove a warp
