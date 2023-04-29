@@ -1,4 +1,4 @@
-name: tp
+name: simple-warp
 version: '${version}'
 main: dev.tp.WarpPluginLoader
 api-version: 1.19

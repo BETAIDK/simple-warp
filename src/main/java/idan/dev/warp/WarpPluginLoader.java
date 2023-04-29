@@ -5,6 +5,7 @@ import idan.dev.warp.commands.UnWarp;
 import idan.dev.warp.commands.Warp;
 import idan.dev.warp.system.WarpManager;
 import lombok.Getter;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class WarpPluginLoader extends JavaPlugin {
@@ -16,6 +17,10 @@ public final class WarpPluginLoader extends JavaPlugin {
         // Plugin startup logic
         getConfig().options().copyDefaults(true);
         saveConfig();
+
+        Bukkit.getServer().getConsoleSender().sendMessage("§a§lRunning plugin: §rSimple-warp v0.1");
+        Bukkit.getServer().getConsoleSender().sendMessage("§a§lRunning on Bukkit §r- Spigot");
+        Bukkit.getServer().getConsoleSender().sendMessage("§a§lMade by: §rBeta#8084");
 
         // register commands
         getCommand("setWarp").setExecutor(new SetWarp(this));

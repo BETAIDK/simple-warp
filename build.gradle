@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'dev'
-version = '1.0-SNAPSHOT'
+version = 'realse-1.0.0'
 
 repositories {
     mavenCentral()
@@ -20,7 +20,7 @@ repositories {
 
 shadowJar {
     destinationDirectory.set(file('output'))
-    archiveFileName.set("tp.jar")
+    archiveFileName.set("simple-warp.jar")
 }
 
 dependencies {
