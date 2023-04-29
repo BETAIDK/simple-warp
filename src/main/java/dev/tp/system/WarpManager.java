@@ -1,4 +1,4 @@
-package dev.tp.sys;
+package dev.tp.system;
 
 import dev.tp.TpPluginLoader;
 import dev.tp.utils.OfflineLocation;

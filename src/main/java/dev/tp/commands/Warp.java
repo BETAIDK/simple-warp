@@ -1,7 +1,7 @@
 package dev.tp.commands;
 
 import dev.tp.TpPluginLoader;
-import dev.tp.sys.WarpManager;
+import dev.tp.system.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -23,13 +23,8 @@ public class Warp implements CommandExecutor {
             return true;
         }
 
-        if (!player.hasPermission("plugin.admin.setwarp")) {
-            sender.sendMessage("§cYou don't have permission to use this command");
-            return false;
-        }
-
         if (args.length != 1) {
-            sender.sendMessage("§cUsage: /setwarp <name>");
+            sender.sendMessage("§cUsage: /warp <name>");
             return false;
         }
 

@@ -1,7 +1,7 @@
 package dev.tp.commands;
 
 import dev.tp.TpPluginLoader;
-import dev.tp.sys.WarpManager;
+import dev.tp.system.WarpManager;
 import dev.tp.utils.OfflineLocation;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;

@@ -1,6 +1,7 @@
 package dev.tp.commands;
 
 import dev.tp.TpPluginLoader;
+import dev.tp.system.TpaManager;
 import dev.tp.system.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -11,38 +12,35 @@ import org.bukkit.entity.Player;
 
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
-public class UnWarp implements CommandExecutor, TabCompleter {
+public class Tpa implements CommandExecutor, TabCompleter {
 
     private final TpPluginLoader plugin;
 
-    public UnWarp(TpPluginLoader plugin) {
+    public Tpa(TpPluginLoader plugin) {
         this.plugin = plugin;
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player player)) {
             Bukkit.getLogger().severe("Only player allowed to use commands");
             return true;
         }
 
-        if (!player.hasPermission("plugin.admin.unwarp")) {
-            sender.sendMessage("§cYou don't have permission to use this command");
-            return false;
-        }
-
         if (args.length != 1) {
-            sender.sendMessage("§cUsage: /unwarp <name>");
+            sender.sendMessage("§cUsage: /tpa <name>");
             return false;
         }
 
-        WarpManager manager = plugin.getWarpManager();
-        String warpName = args[0];
+        TpaManager manager = plugin.getTpaManager();
+        UUID target = UUID.fromString(args[0]);
 
-        if (manager.getWarp(warpName).isEmpty()) return false;
-        manager.removeWarp(warpName);
-        player.sendMessage("warp " + warpName + " was successful removed!");
+        if (manager.getTarget(target).isEmpty()) return false;
+        manager.addRequest(player.getUniqueId(), target);
+        player.sendMessage("§aRequest sent to " + args[0]);
+        sender.sendMessage("§aYou have a request from " + player.getName());
         return true;
     }
 
