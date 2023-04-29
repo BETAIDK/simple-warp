@@ -1,4 +1,4 @@
 name: tp
 version: '${version}'
-main: dev.tp.Main
+main: dev.tp.TpPluginLoader
 api-version: 1.19
