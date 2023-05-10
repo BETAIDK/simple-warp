@@ -34,7 +34,8 @@ public class Warp implements CommandExecutor, TabCompleter {
 
         WarpManager manager = plugin.getWarpManager();
         String warpName = args[0];
-
+        
+        if (manager.getWarp(warpName).isEmpty()) return false;
         player.teleport(manager.getWarp(warpName).get().toLocation());
         return true;
     }
