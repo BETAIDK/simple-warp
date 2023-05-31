@@ -9,8 +9,8 @@ version = 'release-1.0.0'
 repositories {
     mavenCentral()
     maven {
-        name = "spigotmc-repo"
-        url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
     }
     maven {
         name = "sonatype"
@@ -24,10 +24,13 @@ shadowJar {
 }
 
 dependencies {
+    implementation 'org.jetbrains:annotations:24.0.0'
+
+    // lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
 
-    compileOnly "org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT"
+    compileOnly "io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT"
 }
 
 def targetJavaVersion = 17

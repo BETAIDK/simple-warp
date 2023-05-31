@@ -1,4 +1,4 @@
-package idan.dev.warp.system;
+package idan.dev.warp.managers;
 
 import idan.dev.warp.WarpPluginLoader;
 import idan.dev.warp.utils.OfflineLocation;
@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
 public class WarpManager {
 
     public static final Pattern WARP_REGEX = Pattern.compile("^[a-zA-Z0-9_]{1,20}$");
-
     private final WarpPluginLoader plugin;
     private final Map<String, OfflineLocation> warps;
 
