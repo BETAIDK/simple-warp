@@ -9,3 +9,5 @@ commands:
     description: Set a warp
   unWarp:
     description: Remove a warp
+  warpList:
+    description: List all warps
