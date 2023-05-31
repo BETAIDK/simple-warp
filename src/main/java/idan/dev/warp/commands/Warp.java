@@ -39,11 +39,13 @@ public class Warp implements CommandExecutor, TabCompleter {
 
         WarpManager manager = plugin.getWarpManager();
         String warpName = args[0];
-
+      
         if (manager.getWarp(warpName).isEmpty()) {
             player.sendMessage(PREFIX + "§cWarp: " + warpName + " does not exist!");
             return false;
         }
+        
+        if (manager.getWarp(warpName).isEmpty()) return false;
         player.teleport(manager.getWarp(warpName).get().toLocation());
         player.sendMessage(PREFIX + "§aYou have been teleported to " + warpName + "!");
         return true;
